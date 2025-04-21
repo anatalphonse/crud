@@ -12,5 +12,3 @@ services:
         value: project.settings
       - key: PYTHON_VERSION
         value: 3.11
-      - key: DATABASE_URL
-        value: postgresql://cruddb_ilyf_user:rZKLkD6vk0U2DfW01XS6uuxddeu0mUG9@dpg-d0316q3uibrs73bau6eg-a.singapore-postgres.render.com/cruddb_ilyf
