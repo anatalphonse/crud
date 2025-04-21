@@ -25,7 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#=49ux#2huk_&%diw$v@b_u_uj28_$x7^ywv_gck4k(o*(06^9'
+import os
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'default-secret-key-for-dev')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -92,7 +93,7 @@ LOGOUT_REDIRECT_URL = '/login/'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get("postgresql://cruddb_ilyf_user:rZKLkD6vk0U2DfW01XS6uuxddeu0mUG9@dpg-d0316q3uibrs73bau6eg-a.singapore-postgres.render.com/cruddb_ilyf"),
+        default=os.environ.get("DATABASE_URL"),
         conn_max_age=600,
         ssl_require=True
     )
