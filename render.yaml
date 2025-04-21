@@ -2,14 +2,14 @@ services:
   - type: web
     name: django-student-crud
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: | 
+      pip install -r requirements.txt
+      python manage.py migrate
+      python manage.py collectstatic --noinput
     startCommand: gunicorn project.wsgi
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: project.settings
       - key: PYTHON_VERSION
         value: 3.11
-    preDeployCommand: |
-      python manage.py migrate
-      python manage.py collectstatic --noinput
 
