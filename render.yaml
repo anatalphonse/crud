@@ -9,8 +9,4 @@ services:
         value: project.settings
       - key: PYTHON_VERSION
         value: 3.11
-      - key: DATABASE_URL
-        value: postgresql://crud_4l05_user:wFObxyWtsaG8pL7B1opWU0ix5QP6klMt@dpg-d02uh6adbo4c73c42j7g-a.oregon-postgres.render.com/crud_4l05
-    preDeployCommand: |
-      python manage.py migrate
-      python manage.py collectstatic --noinput
+    preDeployCommand: python manage.py migrate
