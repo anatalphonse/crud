@@ -80,6 +80,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 LOGIN_URL = '/login/'  # Or whatever URL name you use for your login
 
 LOGIN_REDIRECT_URL = '/'
+
 LOGOUT_REDIRECT_URL = '/login/'
 
 
