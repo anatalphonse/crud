@@ -90,10 +90,11 @@ LOGOUT_REDIRECT_URL = '/login/'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('postgresql://crud_4l05_user:wFObxyWtsaG8pL7B1opWU0ix5QP6klMt@dpg-d02uh6adbo4c73c42j7g-a.oregon-postgres.render.com/crud_4l05','sqlite:///db.sqlite3'),
+        default='sqlite:///db.sqlite3',
         conn_max_age=600
     )
 }
+
 
 
 
