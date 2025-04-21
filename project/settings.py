@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 import dj_database_url
 
+import dotenv
+dotenv.load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -90,7 +92,9 @@ LOGOUT_REDIRECT_URL = '/login/'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get("postgresql://cruddb_ilyf_user:rZKLkD6vk0U2DfW01XS6uuxddeu0mUG9@dpg-d0316q3uibrs73bau6eg-a.singapore-postgres.render.com/cruddb_ilyf")
+        default=os.environ.get("postgresql://cruddb_ilyf_user:rZKLkD6vk0U2DfW01XS6uuxddeu0mUG9@dpg-d0316q3uibrs73bau6eg-a.singapore-postgres.render.com/cruddb_ilyf"),
+        conn_max_age=600,
+        ssl_require=True
     )
 }
 
