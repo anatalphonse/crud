@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect,get_object_or_404
+from django.contrib.auth.decorators import login_required
 from .models import student
 from .forms import StudentForm
 # Create your views here.
@@ -13,6 +14,7 @@ def add_student(request):
         form = StudentForm()
     return render(request, 'add_student.html',{'form':form})
 
+@login_required
 def student_list(request):
     students = student.objects.all()
     return render(request, 'student_list.html', {'students':students})
