@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-#=49ux#2huk_&%diw$v@b_u_uj28_$x7^ywv_gck4k(o*(06^9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['crud-1-dxm7.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -89,7 +89,7 @@ LOGOUT_REDIRECT_URL = '/login/'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('postgresql://crud_4l05_user:wFObxyWtsaG8pL7B1opWU0ix5QP6klMt@dpg-d02uh6adbo4c73c42j7g-a.oregon-postgres.render.com/crud_4l05'),
+        default=os.getenv('postgresql://crud_4l05_user:wFObxyWtsaG8pL7B1opWU0ix5QP6klMt@dpg-d02uh6adbo4c73c42j7g-a.oregon-postgres.render.com/crud_4l05','sqlite:///db.sqlite3'),
         conn_max_age=600
     )
 }
